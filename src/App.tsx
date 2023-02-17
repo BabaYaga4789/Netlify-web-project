@@ -1,14 +1,20 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import News from "./pages/News";
+import Profile from "./pages/Profile";
+import Registration from "./pages/Registration";
 
-function App() {
-  const [count, setCount] = useState(0);
+function App() { 
+
 
   return (
     <ChakraProvider>
-      <News />
+      <Routes>
+        <Route path="/" element={<Registration />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/news" element={<News />} />
+      </Routes>
     </ChakraProvider>
   );
 }
