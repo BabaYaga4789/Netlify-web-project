@@ -1,22 +1,27 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import { Route, Routes } from "react-router-dom";
+import { createBrowserRouter, Route, Routes, useParams } from "react-router-dom";
 import "./App.css";
+import Login from "./pages/Login";
 import News from "./pages/News";
-import Profile from "./pages/Profile";
+import LoginProfile from "./pages/LoginProfile";
+import RegisterProfile from "./pages/RegisterProfile";
 import Registration from "./pages/Registration";
+import UserProfile from "./pages/UserProfile";
+import { ChakraProvider } from "@chakra-ui/react";
 
-function App() { 
 
-
-  return (
+function App() {
+  return(
     <ChakraProvider>
-      <Routes>
-        <Route path="/" element={<Registration />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/news" element={<News />} />
-      </Routes>
-    </ChakraProvider>
-  );
+    <Routes>
+      <Route path="/" element={<Login />}/>
+      <Route path="/loginprofile" element={<LoginProfile />}/>
+      <Route path="/register" element={<Registration />}/>
+      <Route path="/registerprofile" element={<RegisterProfile />}/>
+      <Route path="/news" element={<News />}/>
+      <Route path="/userprofile/:userid" element={<UserProfile />}/>
+    </Routes>
+  </ChakraProvider>
+  )
 }
 
 export default App;

@@ -73,7 +73,7 @@ export default function Registration() {
             setIsConfirmPasswordValid(false);
         }
         if(validateFirstName() && validateLastName() && validateEmail() && validatePassword() && validateConfirmPassword()){
-            navigate("/profile", {state: {email: email, password: password, firstName: firstName, lastName: lastName}});
+            navigate("/RegisterProfile", {state: {email: email, password: password, firstName: firstName, lastName: lastName}});
         }
 
     }
