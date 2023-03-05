@@ -2,26 +2,11 @@ import { Flex, Heading, Container, UnorderedList, ListItem, Box } from "@chakra-
 import { useState, useEffect, Key } from "react";
 import { useParams } from "react-router-dom";
 
-interface UserProfile {
-    _id: string;
-    name: {
-        first: string;
-        last: string;
-    };
-    picture: string;
-    email: string;
-    phone: string;
-    location: {
-        city: string;
-        state: string;
-        country: string;
-    };
-}
 
 export default function UserProfile() {
     const { userid } = useParams();
     console.log(userid);
-    const [userProfile, setUserProfile] = useState([]);
+    const [userProfile, setUserProfile] = useState<any>([]);
 
 
     useEffect(() => {
